@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="images/foto-perfil.jpg" width="300" style="border-radius: 50%; margin-bottom: 20px;" />
+  
   <h1>👋 Hola, soy Fernando Valenzuela Ibarra</h1>
 
   <p>

@@ -80,6 +80,14 @@ jobs:
               echo "VERSION=0.0.0" >> $GITHUB_OUTPUT
               exit 0
             fi
+          elif [[ "${{ inputs.version_file }}" == "VERSION" ]]; then
+            if git show $BASE_BRANCH:${{ inputs.version_file }} >/dev/null 2>&1; then
+              VERSION=$(git show $BASE_BRANCH:${{ inputs.version_file }})
+            else
+              echo "⚠️ No se pudo obtener la versión de $BASE_BRANCH, saltando validación"
+              echo "VERSION=0.0.0" >> $GITHUB_OUTPUT
+              exit 0
+            fi
           else
             echo "Unsupported file: ${{ inputs.version_file }}"
             exit 1

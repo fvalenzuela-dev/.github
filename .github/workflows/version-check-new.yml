@@ -18,7 +18,7 @@ on:
 
 jobs:
   check-version-bump:
-    name: Revisar versión
+    name: Validate version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

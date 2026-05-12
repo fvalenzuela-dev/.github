@@ -82,7 +82,7 @@ on:
   workflow_call:
     inputs:
       coverage_report_path:
-        description: 'Ruta al archivo de reporte de cobertura (ej: coverage/lcov.info)'
+        description: 'Ruta al archivo de reporte de cobertura'
         required: true
         type: string
       coverage_artifact_name:
@@ -111,11 +111,12 @@ jobs:
           COVERAGE_FILE=$(basename "${{ inputs.coverage_report_path }}")
           echo "file=$COVERAGE_FILE" >> $GITHUB_OUTPUT
       - name: Fail if no CODACY_PROJECT_TOKEN
-        if: secrets.CODACY_PROJECT_TOKEN == ''
         run: |
-          echo "ERROR: CODACY_PROJECT_TOKEN is not configured."
-          echo "Add it to your repository secrets to enable coverage reporting."
-          exit 1
+          if [ -z "${{ secrets.CODACY_PROJECT_TOKEN }}" ]; then
+            echo "ERROR: CODACY_PROJECT_TOKEN is not configured."
+            echo "Add it to your repository secrets to enable coverage reporting."
+            exit 1
+          fi
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:

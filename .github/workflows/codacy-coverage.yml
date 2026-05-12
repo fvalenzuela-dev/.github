@@ -78,7 +78,6 @@ name: Codacy Test Coverage Reporter
 #       CODACY_API_TOKEN: ${{ secrets.CODACY_API_TOKEN }}
 # -------------------------------------------------------------------
 
-name: Codacy Test Coverage Reporter
 on:
   workflow_call:
     inputs:

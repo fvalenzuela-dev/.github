@@ -1,20 +1,84 @@
----
-name: "Nueva Funcionalidad ✨"
-about: Sugerir una idea o nueva característica para el proyecto.
-title: "[FEATURE] "
-labels: enhancement
-assignees: ''
+name: Feature Request
+description: Suggest a new feature or enhancement for Gentle AI
+labels: ["enhancement", "status:needs-review"]
 
----
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📋 How this works
 
-**¿Tu propuesta está relacionada con un problema?**
-Una descripción clara de cuál es el problema (ej: "Me molesta que...").
+        1. **Submit** this feature request → it gets the `status:needs-review` label automatically
+        2. A **maintainer reviews** it and adds `status:approved` (or closes it as out-of-scope/duplicate)
+        3. **Only then** should you (or anyone) open a PR to implement it
 
-**Descripción de la solución**
-Una descripción clara de lo que quieres que pase.
+        PRs that implement features without `status:approved` on the linked issue will be automatically rejected.
 
-**Alternativas consideradas**
-Descripción de cualquier solución alternativa o características que hayas considerado.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight Checklist
+      options:
+        - label: I have searched [existing issues] and this is not a duplicate
+          required: true
+        - label: I understand that PRs will be rejected if the linked issue does not have `status:approved`
+          required: true
 
-**Contexto adicional**
-Añade aquí cualquier otro contexto o capturas de pantalla sobre la solicitud de la función.
+  - type: dropdown
+    id: area
+    attributes:
+      label: 🔍 Affected Area
+      description: Which area of Gentle AI would this feature affect?
+      options:
+        - CLI (commands, flags)
+        - TUI (terminal UI)
+        - Installation Pipeline
+        - Agent Detection
+        - System Detection
+        - Catalog/Steps
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 💡 Problem Statement
+      description: Is your feature request related to a problem? Describe it clearly.
+      placeholder: |
+        I'm always frustrated when...
+        It's currently not possible to...
+        Every time I need to X, I have to manually...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 📦 Proposed Solution
+      description: Describe the solution you'd like. Be as specific as possible.
+      placeholder: |
+        Example usage:
+          gga <command> <flags>
+
+        Expected output:
+          ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternatives Considered
+      description: Describe any alternative solutions or features you've considered.
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 📎 Additional Context
+      description: Add any other context, screenshots, or examples about the feature request here.
+    validations:
+      required: false

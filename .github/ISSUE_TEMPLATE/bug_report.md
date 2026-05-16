@@ -1,28 +1,140 @@
----
-name: "Reporte de Error 🐛"
-about: Informar sobre algo que no funciona para que podamos arreglarlo.
-title: "[BUG] "
-labels: bug, high priority
-assignees: ''
+name: Bug Report
+description: File a bug report for Gentle AI
+labels: ["bug", "status:needs-review"]
 
----
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📋 How this works
 
-**Descripción del error**
-Una descripción clara y concisa de lo que está pasando.
+        1. **Submit** this bug report → it gets the `status:needs-review` label automatically
+        2. A **maintainer reviews** it and adds `status:approved` (or closes it as invalid/duplicate)
+        3. **Only then** should you (or anyone) open a PR to fix it
 
-**Pasos para reproducir**
-1. Ve a '...'
-2. Haz clic en '....'
-3. Desplázate hacia abajo hasta '....'
-4. Mira el error.
+        PRs that fix issues without `status:approved` will be automatically rejected.
 
-**Comportamiento esperado**
-¿Qué debería haber pasado?
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight Checklist
+      options:
+        - label: I have searched [existing issues] and this is not a duplicate
+          required: true
+        - label: I understand that PRs will be rejected if the linked issue does not have `status:approved`
+          required: true
 
-**Capturas de pantalla**
-Si aplica, añade capturas de pantalla para ayudar a explicar el problema.
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe the bug...
+    validations:
+      required: true
 
-**Entorno:**
- - Lenguaje (Python/Java/React):
- - OS: [ej. iOS]
- - Navegador [ej. chrome, safari]
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 Steps to Reproduce
+      description: Steps to reproduce the behavior.
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 🖥️ Environment
+
+  - type: input
+    id: version
+    attributes:
+      label: Gentle AI Version
+      description: Run `gga version` to get this
+      placeholder: "e.g. v0.1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - macOS
+        - Linux (Ubuntu/Debian)
+        - Linux (Arch/Manjaro)
+        - Linux (Fedora/RHEL)
+        - Linux (Other)
+        - Windows
+        - Windows (WSL)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: AI Agent / Client
+      description: Which AI agent or client are you using?
+      options:
+        - Claude Code
+        - OpenCode
+        - Gemini CLI
+        - Cursor
+        - Windsurf
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 📋 Affected Area
+      options:
+        - CLI (commands, flags)
+        - TUI (terminal UI)
+        - Installation Pipeline
+        - Agent Detection
+        - System Detection
+        - Catalog/Steps
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 💡 Logs / Error Output
+      description: Paste any relevant log output. This will be auto-formatted as code.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here (screenshots, config files, etc.)
+    validations:
+      required: false

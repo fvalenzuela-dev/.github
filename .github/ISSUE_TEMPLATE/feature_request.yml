@@ -1,68 +1,68 @@
-name: Feature Request
-description: Suggest a new feature or enhancement for Gentle AI
+name: Solicitud de funcionalidad
+description: Proponé una nueva funcionalidad o mejora para Gentle AI
 labels: ["enhancement", "status:needs-review"]
 
 body:
   - type: markdown
     attributes:
       value: |
-        ## 📋 How this works
+        ## 📋 Cómo funciona
 
-        1. **Submit** this feature request → it gets the `status:needs-review` label automatically
-        2. A **maintainer reviews** it and adds `status:approved` (or closes it as out-of-scope/duplicate)
-        3. **Only then** should you (or anyone) open a PR to implement it
+        1. **Enviá** esta solicitud de feature → recibirá automáticamente la etiqueta `status:needs-review`
+        2. Una persona mantenedora la revisará y agregará `status:approved` (o la cerrará como fuera de alcance/duplicada)
+        3. **Recién entonces** deberías abrir un PR para implementarla
 
-        PRs that implement features without `status:approved` on the linked issue will be automatically rejected.
+        Los PRs que implementen features sin `status:approved` en el issue vinculado serán rechazados automáticamente.
 
   - type: checkboxes
     id: preflight
     attributes:
-      label: Pre-flight Checklist
+      label: Checklist previa
       options:
-        - label: I have searched [existing issues] and this is not a duplicate
+        - label: Busqué en los issues existentes y esto no es un duplicado
           required: true
-        - label: I understand that PRs will be rejected if the linked issue does not have `status:approved`
+        - label: Entiendo que los PRs serán rechazados si el issue vinculado no tiene `status:approved`
           required: true
 
   - type: dropdown
     id: area
     attributes:
-      label: 🔍 Affected Area
-      description: Which area of Gentle AI would this feature affect?
+      label: 🔍 Área afectada
+      description: ¿Qué área de Gentle AI afectaría esta funcionalidad?
       options:
-        - CLI (commands, flags)
-        - TUI (terminal UI)
-        - Installation Pipeline
-        - Agent Detection
-        - System Detection
-        - Catalog/Steps
-        - Documentation
-        - Other
+        - CLI (comandos, flags)
+        - TUI (interfaz de terminal)
+        - Pipeline de instalación
+        - Detección de agentes
+        - Detección del sistema
+        - Catálogo/steps
+        - Documentación
+        - Otro
     validations:
       required: true
 
   - type: textarea
     id: problem
     attributes:
-      label: 💡 Problem Statement
-      description: Is your feature request related to a problem? Describe it clearly.
+      label: 💡 Problema
+      description: ¿Tu solicitud está relacionada con un problema? Describilo con claridad.
       placeholder: |
-        I'm always frustrated when...
-        It's currently not possible to...
-        Every time I need to X, I have to manually...
+        Me frustra cuando...
+        Actualmente no es posible...
+        Cada vez que necesito hacer X, tengo que hacerlo manualmente...
     validations:
       required: true
 
   - type: textarea
     id: solution
     attributes:
-      label: 📦 Proposed Solution
-      description: Describe the solution you'd like. Be as specific as possible.
+      label: 📦 Solución propuesta
+      description: Describí la solución que te gustaría. Sé lo más específico posible.
       placeholder: |
-        Example usage:
-          gga <command> <flags>
+        Ejemplo de uso:
+          gga <comando> <flags>
 
-        Expected output:
+        Salida esperada:
           ...
     validations:
       required: true
@@ -70,15 +70,15 @@ body:
   - type: textarea
     id: alternatives
     attributes:
-      label: 🔄 Alternatives Considered
-      description: Describe any alternative solutions or features you've considered.
+      label: 🔄 Alternativas consideradas
+      description: Describí otras soluciones o features que hayas considerado.
     validations:
       required: false
 
   - type: textarea
     id: context
     attributes:
-      label: 📎 Additional Context
-      description: Add any other context, screenshots, or examples about the feature request here.
+      label: 📎 Contexto adicional
+      description: Agregá cualquier otro contexto, capturas o ejemplos sobre esta solicitud.
     validations:
       required: false

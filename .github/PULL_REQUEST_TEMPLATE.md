@@ -1,92 +1,94 @@
-<!-- ⚠️ READ BEFORE SUBMITTING
-  Every PR must be linked to an issue that has the "status:approved" label.
-  PRs without a linked approved issue will be automatically rejected by CI.
-  See CONTRIBUTING.md for the full contribution workflow.
+<!-- ⚠️ LEER ANTES DE ENVIAR
+  Todo PR debe estar vinculado a un issue que tenga la etiqueta "status:approved".
+  Los PRs sin un issue vinculado y aprobado serán rechazados automáticamente por CI.
+  Consultá CONTRIBUTING.md para ver el flujo completo de contribución.
 -->
 
-## 🔗 Linked Issue
+## 🔗 Issue vinculado
 
 Closes #
 
-<!-- Replace the # above with the issue number, e.g.: Closes #42 -->
+<!-- Reemplazá el # de arriba por el número del issue, por ejemplo: Closes #42 -->
 
 ---
 
-## 🏷️ PR Type
+## 🏷️ Tipo de PR
 
-What kind of change does this PR introduce?
+¿Qué tipo de cambio introduce este PR?
 
-- [ ] `type:bug` — Bug fix (non-breaking change that fixes an issue)
-- [ ] `type:feature` — New feature (non-breaking change that adds functionality)
-- [ ] `type:docs` — Documentation only
-- [ ] `type:refactor` — Code refactoring (no functional changes)
-- [ ] `type:chore` — Build, CI, or tooling changes
-- [ ] `type:breaking-change` — Breaking change (fix or feature that changes existing behavior)
-
----
-
-## 📝 Summary
-
-<!-- Provide a clear and concise description of what this PR does and why. -->
+- [ ] `type:bug` — Corrección de bug (cambio no disruptivo que corrige un issue)
+- [ ] `type:feature` — Nueva funcionalidad (cambio no disruptivo que agrega funcionalidad)
+- [ ] `type:docs` — Solo documentación
+- [ ] `type:refactor` — Refactorización de código (sin cambios funcionales)
+- [ ] `type:chore` — Cambios de build, CI o tooling
+- [ ] `type:breaking-change` — Cambio disruptivo (fix o feature que cambia comportamiento existente)
 
 ---
 
-## 📂 Changes
+## 📝 Resumen
 
-| File / Area | What Changed |
-|-------------|-------------|
-| `path/to/file` | Brief description |
+<!-- Describí de forma clara y concisa qué hace este PR y por qué. -->
 
 ---
 
-## 🧪 Test Plan
+## 📂 Cambios
 
-**Unit Tests**
+| Archivo / área | Qué cambió        |
+| -------------- | ----------------- |
+| `path/to/file` | Descripción breve |
+
+---
+
+## 🧪 Plan de pruebas
+
+**Tests unitarios**
+
 ```bash
 go test ./...
 ```
 
-**E2E Tests** (Docker required)
+**Tests E2E** (requieren Docker)
+
 ```bash
 cd e2e && ./docker-test.sh
 ```
 
-- [ ] Unit tests pass (`go test ./...`)
-- [ ] E2E tests pass (`cd e2e && ./docker-test.sh`)
-- [ ] Manually tested locally
+- [ ] Pasan los tests unitarios (`go test ./...`)
+- [ ] Pasan los tests E2E (`cd e2e && ./docker-test.sh`)
+- [ ] Probado manualmente en local
 
-<!-- Describe any additional manual testing steps if needed. -->
-
----
-
-## 🤖 Automated Checks
-
-The following checks run automatically on this PR:
-
-| Check | Status | Description |
-|-------|--------|-------------|
-| Check PR Cognitive Load | ⏳ | PR should stay within 400 changed lines (`additions + deletions`) or use `size:exception` |
-| Check Issue Reference | ⏳ | PR body must contain `Closes/Fixes/Resolves #N` |
-| Check Issue Has `status:approved` | ⏳ | Linked issue must have been approved before work began |
-| Check PR Has `type:*` Label | ⏳ | Exactly one `type:*` label must be applied |
-| Unit Tests | ⏳ | `go test ./...` must pass |
-| E2E Tests | ⏳ | `cd e2e && ./docker-test.sh` must pass |
+<!-- Describí pasos adicionales de prueba manual si hace falta. -->
 
 ---
 
-## ✅ Contributor Checklist
+## 🤖 Checks automatizados
 
-- [ ] PR is linked to an issue with `status:approved`
-- [ ] PR stays within 400 changed lines, or I have requested/obtained maintainer-applied `size:exception` with rationale documented
-- [ ] I have added the appropriate `type:*` label to this PR
-- [ ] Unit tests pass (`go test ./...`)
-- [ ] E2E tests pass (`cd e2e && ./docker-test.sh`)
-- [ ] I have updated documentation if necessary
-- [ ] My commits follow [Conventional Commits](https://www.conventionalcommits.org/) format
-- [ ] My commits do not include `Co-Authored-By` trailers
+Los siguientes checks corren automáticamente en este PR:
+
+| Check                             | Estado | Descripción                                                                                               |
+| --------------------------------- | ------ | --------------------------------------------------------------------------------------------------------- |
+| Check PR Cognitive Load           | ⏳     | El PR debería mantenerse dentro de 400 líneas cambiadas (`additions + deletions`) o usar `size:exception` |
+| Check Issue Reference             | ⏳     | El cuerpo del PR debe contener `Closes/Fixes/Resolves #N`                                                 |
+| Check Issue Has `status:approved` | ⏳     | El issue vinculado debe haber sido aprobado antes de empezar el trabajo                                   |
+| Check PR Has `type:*` Label       | ⏳     | Debe aplicarse exactamente una etiqueta `type:*`                                                          |
+| Unit Tests                        | ⏳     | Debe pasar `go test ./...`                                                                                |
+| E2E Tests                         | ⏳     | Debe pasar `cd e2e && ./docker-test.sh`                                                                   |
 
 ---
 
-## 💬 Notes for Reviewers
+## ✅ Checklist para contributors
 
-<!-- Optional: anything you want reviewers to pay special attention to. -->
+- [ ] El PR está vinculado a un issue con `status:approved`
+- [ ] El PR se mantiene dentro de 400 líneas cambiadas, o solicité/obtuve una etiqueta `size:exception` aplicada por maintainers con justificación documentada
+- [ ] Agregué la etiqueta `type:*` correspondiente a este PR
+- [ ] Pasan los tests unitarios (`go test ./...`)
+- [ ] Pasan los tests E2E (`cd e2e && ./docker-test.sh`)
+- [ ] Actualicé la documentación si era necesario
+- [ ] Mis commits siguen el formato [Conventional Commits](https://www.conventionalcommits.org/)
+- [ ] Mis commits no incluyen trailers `Co-Authored-By`
+
+---
+
+## 💬 Notas para reviewers
+
+<!-- Opcional: cualquier cosa a la que quieras que reviewers presten atención especial. -->

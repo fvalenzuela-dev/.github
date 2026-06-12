@@ -36,6 +36,7 @@ Choose ONLY from these common labels:
 - "🔒 security"
 - "❓ help wanted"
 - "💬 discussion"
+- "🔍 status:needs-review"
 
 {prompt_context}
 
